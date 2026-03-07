@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Notebook Login</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>People Notebook</h1>
+
+<input id="password" placeholder="Password" type="password">
+
+<button onclick="login()">Enter</button>
+
+<p id="error"></p>
+
+</div>
+
+<script src="js/login.js"></script>
+<footer class="footer">
+
+<button onclick="lockSite()">
+🔒 Lock Website
+</button>
+
+</footer>
+
+<script>
+function lockSite(){
+window.location="index.html"
+}
+</script>
+
+</body>
+</html>

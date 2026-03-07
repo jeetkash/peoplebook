@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Intel</title>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<div class="logo" onclick="location.href='index.html'">
+PeopleBook
+</div>
+
+<nav>
+
+<a href="dashboard.html">Dashboard</a>
+<a href="person.html">Add Person</a>
+<a href="intel.html">Intel</a>
+
+</nav>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>Add Intel</h2>
+
+<input id="title" placeholder="Title">
+<input id="source" placeholder="Source">
+
+<label>Date Heard</label>
+<input id="dateHeard" type="date">
+
+<textarea id="intelText"></textarea>
+
+<label>Confidence</label>
+<input id="confidence" type="range" min="0" max="10">
+
+<select id="status">
+
+<option>Unverified</option>
+<option>Confirmed</option>
+<option>False</option>
+
+</select>
+
+<button onclick="addIntel()">Add Intel</button>
+
+</div>
+
+<div class="card">
+
+<h2>Intel List</h2>
+
+<table>
+
+<thead>
+
+<tr>
+<th>Title</th>
+<th>Source</th>
+<th>Status</th>
+</tr>
+
+</thead>
+
+<tbody id="intelTable"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<script type="module" src="js/intel.js"></script>
+
+<footer class="footer">
+
+<button onclick="lockSite()">
+🔒 Lock Website
+</button>
+
+</footer>
+
+<script>
+function lockSite(){
+window.location="index.html"
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Person Profile</title>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<div class="logo" onclick="location.href='index.html'">
+PeopleBook
+</div>
+
+<nav>
+
+<a href="dashboard.html">Dashboard</a>
+<a href="person.html">Add Person</a>
+<a href="intel.html">Intel</a>
+
+</nav>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2 id="formTitle">Add Person</h2>
+
+<input id="name" placeholder="Name">
+<input id="fullName" placeholder="Full Name">
+<input id="nickname" placeholder="Nickname">
+<input id="gender" placeholder="Gender">
+
+<input id="course" placeholder="Course">
+<input id="college" placeholder="College">
+
+<input id="phone" placeholder="Phone">
+<input id="instagram" placeholder="Instagram">
+
+<input id="whereMet" placeholder="Where you met">
+
+<label>First Met</label>
+<input id="firstMet" type="date">
+
+<textarea id="firstImpression" placeholder="First Impression"></textarea>
+
+<input id="tags" placeholder="Tags">
+
+<label>Trust</label>
+<input id="trust" type="range" min="0" max="10">
+
+<label>Reliability</label>
+<input id="reliability" type="range" min="0" max="10">
+
+<label>Influence</label>
+<input id="influence" type="range" min="0" max="10">
+
+<label>Risk</label>
+<input id="risk" type="range" min="0" max="10">
+
+<textarea id="notes" placeholder="Notes"></textarea>
+
+<button onclick="savePerson()">Save Person</button>
+</div>
+
+<div class="card">
+
+<h2>Add Interaction Log</h2>
+
+<input id="logDate" type="date">
+<input id="logLocation" placeholder="Location">
+
+<textarea id="said" placeholder="What they said"></textarea>
+
+<textarea id="did" placeholder="What they did"></textarea>
+
+<textarea id="thoughts" placeholder="My thoughts"></textarea>
+
+<input id="mood" placeholder="Mood">
+
+<input id="redFlag" placeholder="Red Flag">
+
+<input id="greenFlag" placeholder="Green Flag">
+
+<button onclick="addLog()">Add Log</button>
+
+</div>
+
+<div class="card">
+
+<h2>Timeline</h2>
+
+<div id="timeline"></div>
+
+</div>
+
+</div>
+
+<script type="module" src="js/person.js"></script>
+<footer class="footer">
+
+<button onclick="lockSite()">
+🔒 Lock Website
+</button>
+
+</footer>
+
+<script>
+function lockSite(){
+window.location="index.html"
+}
+</script>
+
+<!-- EDIT PERSON MODAL -->
+
+<div id="editModal" class="modal">
+
+<div class="modal-content">
+
+<h2>Edit Person</h2>
+
+<input id="edit_name" placeholder="Name">
+<input id="edit_fullName" placeholder="Full Name">
+<input id="edit_nickname" placeholder="Nickname">
+<input id="edit_gender" placeholder="Gender">
+
+<input id="edit_course" placeholder="Course">
+<input id="edit_college" placeholder="College">
+
+<input id="edit_phone" placeholder="Phone">
+<input id="edit_instagram" placeholder="Instagram">
+
+<input id="edit_whereMet" placeholder="Where you met">
+
+<label>First Met</label>
+<input id="edit_firstMet" type="date">
+
+<textarea id="edit_firstImpression" placeholder="First Impression"></textarea>
+
+<input id="edit_tags" placeholder="Tags">
+
+<label>Trust</label>
+<input id="edit_trust" type="range" min="0" max="10">
+
+<label>Reliability</label>
+<input id="edit_reliability" type="range" min="0" max="10">
+
+<label>Influence</label>
+<input id="edit_influence" type="range" min="0" max="10">
+
+<label>Risk</label>
+<input id="edit_risk" type="range" min="0" max="10">
+
+<textarea id="edit_notes" placeholder="Notes"></textarea>
+
+<button onclick="saveEdit()">Save Changes</button>
+
+<button onclick="closeModal()">Cancel</button>
+
+</div>
+
+</div>
+
+</body>
+</html>

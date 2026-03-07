@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Dashboard</title>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<div class="logo" onclick="location.href='index.html'">
+PeopleBook
+</div>
+
+<nav>
+
+<a href="dashboard.html">Dashboard</a>
+<a href="person.html">Add Person</a>
+<a href="intel.html">Intel</a>
+
+</nav>
+
+</header>
+
+<div class="container">
+
+<div class="card">
+
+<h2>People Database</h2>
+
+<p>Store profiles and interaction history</p>
+
+<button onclick="location.href='person.html'">
+Add Person
+</button>
+
+</div>
+
+<div class="card">
+
+<h2>People List</h2>
+
+<input
+id="searchInput"
+placeholder="Search people..."
+onkeyup="searchPeople()"
+>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>S.No</th>
+<th>Name</th>
+<th>Trust</th>
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody id="peopleTable"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<script type="module" src="js/dashboard.js"></script>
+<footer class="footer">
+
+<button onclick="lockSite()">
+🔒 Lock Website
+</button>
+
+</footer>
+
+<script>
+function lockSite(){
+window.location="index.html"
+}
+</script>
+
+</body>
+</html>

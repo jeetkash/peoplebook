@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Person Profile</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<div class="logo" onclick="location.href='index.html'">
+PeopleBook
+</div>
+
+<nav>
+
+<a href="dashboard.html">Dashboard</a>
+<a href="person.html">Add Person</a>
+<a href="intel.html">Intel</a>
+
+</nav>
+
+</header>
+
+
+
+<div class="container">
+
+<div class="card">
+
+<h2 id="personName"></h2>
+
+<div id="personInfo"></div>
+
+<button onclick="editPerson()">
+✏️ Edit Info
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Add Log</h3>
+
+<input type="date" id="logDate">
+
+<textarea id="logText" placeholder="Write log"></textarea>
+
+<button onclick="addLog()">Add Log</button>
+
+</div>
+
+
+
+<div class="card">
+
+<h3>Logs</h3>
+
+<div id="logsList"></div>
+
+</div>
+
+</div>
+
+
+
+<!-- EDIT MODAL -->
+
+<div id="editModal" class="modal">
+
+<div class="modal-content">
+
+<h2>Edit Person</h2>
+
+<input id="edit_name" placeholder="Name">
+
+<input id="edit_fullName" placeholder="Full Name">
+
+<input id="edit_nickname" placeholder="Nickname">
+
+<input id="edit_gender" placeholder="Gender">
+
+<input id="edit_course" placeholder="Course">
+
+<input id="edit_college" placeholder="College">
+
+<input id="edit_phone" placeholder="Phone">
+
+<input id="edit_instagram" placeholder="Instagram">
+
+<input id="edit_whereMet" placeholder="Where you met">
+
+<label>First Met</label>
+
+<input id="edit_firstMet" type="date">
+
+<textarea id="edit_firstImpression" placeholder="First Impression"></textarea>
+
+<input id="edit_tags" placeholder="Tags">
+
+<label>Trust</label>
+
+<input id="edit_trust" type="range" min="0" max="10">
+
+<label>Reliability</label>
+
+<input id="edit_reliability" type="range" min="0" max="10">
+
+<label>Influence</label>
+
+<input id="edit_influence" type="range" min="0" max="10">
+
+<label>Risk</label>
+
+<input id="edit_risk" type="range" min="0" max="10">
+
+<textarea id="edit_notes" placeholder="Notes"></textarea>
+
+<button onclick="saveEdit()">
+Save Changes
+</button>
+
+<button onclick="closeModal()">
+Cancel
+</button>
+
+</div>
+
+</div>
+
+
+
+<footer class="footer">
+
+<button onclick="lockSite()">
+🔒 Lock Website
+</button>
+
+</footer>
+
+
+
+<script type="module" src="js/profile.js"></script>
+
+<script>
+
+function lockSite(){
+window.location="index.html"
+}
+
+</script>
+
+</body>
+
+</html>
