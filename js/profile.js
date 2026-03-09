@@ -71,24 +71,60 @@ window.loadPerson = loadPerson;
 
 
 
+// IMAGE UPLOAD
+async function uploadImage(file){
+
+const url = "https://api.cloudinary.com/v1_1/dfgslysua/image/upload";
+
+const formData = new FormData();
+
+formData.append("file",file);
+formData.append("upload_preset","peoplebook");
+
+const res = await fetch(url,{
+method:"POST",
+body:formData
+});
+
+const data = await res.json();
+
+return data.secure_url;
+
+}
+
+
+
 // ADD LOG
 async function addLog(){
 
 const date = document.getElementById("logDate").value;
 const text = document.getElementById("logText").value;
+const imageFile = document.getElementById("logImage").files[0];
 
 if(!date || !text){
 alert("Fill both fields");
 return;
 }
 
+let imageURL = "";
+
+if(imageFile){
+imageURL = await uploadImage(imageFile);
+}
+
 await addDoc(collection(db,"logs"),{
+
 personID:personID,
 date:date,
-text:text
+text:text,
+image:imageURL
+
 });
 
 document.getElementById("logText").value="";
+document.getElementById("logImage").value="";
+document.getElementById("imagePreview").style.display="none";
+
 loadLogs();
 
 }
@@ -124,7 +160,7 @@ let html="";
 
 logs.forEach(l=>{
 
-const logText = l.text || l.said || l.thoughts || "No log text";
+const logText = l.text || "No log text";
 
 html += `
 <div class="logItem">
@@ -132,6 +168,8 @@ html += `
 <b>${l.date || "Unknown date"}</b>
 
 <p>${logText}</p>
+
+${l.image ? `<img src="${l.image}" class="logImage">` : ""}
 
 <div class="logActions">
 
@@ -171,23 +209,20 @@ window.deleteLog = deleteLog;
 
 
 
-// EDIT LOG
-async function editLog(id,date,text){
+// ---------------------
+// MODAL BASED LOG EDIT
+// ---------------------
 
-const newDate = prompt("Edit Date:",date);
+let editingLogID = null;
 
-if(newDate===null) return;
+function editLog(id,date,text){
 
-const newText = prompt("Edit Log:",text);
+editingLogID = id;
 
-if(newText===null) return;
+document.getElementById("editLogDate").value = date;
+document.getElementById("editLogText").value = text;
 
-await updateDoc(doc(db,"logs",id),{
-date:newDate,
-text:newText
-});
-
-loadLogs();
+document.getElementById("editLogModal").style.display="flex";
 
 }
 
@@ -195,14 +230,43 @@ window.editLog = editLog;
 
 
 
-// OPEN EDIT PERSON MODAL
+async function saveLogEdit(){
+
+const newDate = document.getElementById("editLogDate").value;
+const newText = document.getElementById("editLogText").value;
+
+await updateDoc(doc(db,"logs",editingLogID),{
+date:newDate,
+text:newText
+});
+
+closeLogModal();
+loadLogs();
+
+}
+
+window.saveLogEdit = saveLogEdit;
+
+
+
+function closeLogModal(){
+document.getElementById("editLogModal").style.display="none";
+}
+
+window.closeLogModal = closeLogModal;
+
+
+
+// ---------------------
+// EDIT PERSON
+// ---------------------
+
 async function editPerson(){
 
 document.getElementById("editModal").style.display="flex";
 
 const ref = doc(db,"people",personID);
 const snap = await getDoc(ref);
-
 const p = snap.data();
 
 document.getElementById("edit_name").value = p.name || "";
@@ -236,7 +300,7 @@ window.editPerson = editPerson;
 
 
 
-// SAVE EDIT
+// SAVE PERSON EDIT
 async function saveEdit(){
 
 const data = {
@@ -284,3 +348,29 @@ document.getElementById("editModal").style.display="none";
 }
 
 window.closeModal = closeModal;
+
+
+
+// IMAGE PREVIEW
+function previewImage(){
+
+const file = document.getElementById("logImage").files[0];
+
+if(!file) return;
+
+const reader = new FileReader();
+
+reader.onload = function(e){
+
+const img = document.getElementById("imagePreview");
+
+img.src = e.target.result;
+img.style.display="block";
+
+};
+
+reader.readAsDataURL(file);
+
+}
+
+window.previewImage = previewImage;
