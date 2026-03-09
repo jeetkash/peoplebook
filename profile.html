@@ -47,17 +47,17 @@ PeopleBook
 
 
 
-<div class="card">
-
 <h3>Add Log</h3>
 
 <input type="date" id="logDate">
 
 <textarea id="logText" placeholder="Write log"></textarea>
 
-<button onclick="addLog()">Add Log</button>
+<input type="file" id="logImage" accept="image/*" onchange="previewImage()">
 
-</div>
+<img id="imagePreview" style="display:none; max-width:300px; margin-top:10px; border-radius:8px;">
+
+<button onclick="addLog()">Add Log</button>
 
 
 
@@ -158,6 +158,31 @@ window.location="index.html"
 }
 
 </script>
+<div id="editLogModal" class="modal">
+
+<div class="modal-content">
+
+<h2>Edit Log</h2>
+
+<label>Date</label>
+<input id="editLogDate" type="date">
+
+<label>Log Text</label>
+<textarea id="editLogText"></textarea>
+
+<br>
+
+<button onclick="saveLogEdit()">
+Save Changes
+</button>
+
+<button onclick="closeLogModal()">
+Cancel
+</button>
+
+</div>
+
+</div>
 
 </body>
 
