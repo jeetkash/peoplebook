@@ -232,3 +232,47 @@ border-radius:4px;
 cursor:pointer;
 font-size:12px;
 }
+
+.logImage{
+width:100%;
+max-width:400px;
+border-radius:10px;
+margin-top:10px;
+border:2px solid #d4af37;
+}
+
+.intelTable{
+width:100%;
+border-collapse:collapse;
+margin-top:20px;
+}
+
+.intelTable th{
+text-align:left;
+padding:12px;
+border-bottom:1px solid #444;
+color:#d4af37;
+}
+
+.intelTable td{
+padding:12px;
+border-bottom:1px solid #222;
+}
+
+.actions button{
+
+margin-right:6px;
+padding:6px 10px;
+
+background:#d4af37;
+border:none;
+
+border-radius:6px;
+
+cursor:pointer;
+font-size:12px;
+}
+
+.actions button:hover{
+background:#f0c95c;
+}
