@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Intel View</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+<div class="logo" onclick="location.href='index.html'">
+PeopleBook
+</div>
+
+<nav>
+
+<a href="dashboard.html">Dashboard</a>
+<a href="person.html">Add Person</a>
+<a href="intel.html">Intel</a>
+
+</nav>
+
+</header>
+
+
+<div class="container">
+
+<!-- MAIN INTEL CARD -->
+<div class="card">
+
+<h2 id="intelTitle"></h2>
+
+<p><b>Source:</b> <span id="intelSource"></span></p>
+<p><b>Date:</b> <span id="intelDate"></span></p>
+<p><b>Status:</b> <span id="intelStatus"></span></p>
+<p><b>Confidence:</b> <span id="intelConfidence"></span></p>
+
+<br>
+
+<p id="intelText"></p>
+
+<br>
+
+<button onclick="openEditIntel()">
+✏️ Edit Intel
+</button>
+
+</div>
+
+
+<!-- CONTINUATION INTEL -->
+<div class="card">
+
+<h3>Continuation Intel</h3>
+
+<input id="subIntelText" placeholder="Add more intel to this gossip...">
+
+<button onclick="addSubIntel()">
++ Intel
+</button>
+
+<br><br>
+
+<div id="subIntelList"></div>
+
+</div>
+
+</div>
+
+
+
+<!-- EDIT INTEL MODAL -->
+<div id="editIntelModal" class="modal">
+
+<div class="modal-content">
+
+<h2>Edit Intel</h2>
+
+<input id="edit_title" placeholder="Title">
+
+<input id="edit_source" placeholder="Source">
+
+<label>Date Heard</label>
+<input id="edit_dateHeard" type="date">
+
+<textarea id="edit_text" placeholder="Intel text"></textarea>
+
+<label>Confidence</label>
+<input id="edit_confidence" type="range" min="0" max="10">
+
+<select id="edit_status">
+
+<option>Unverified</option>
+<option>Confirmed</option>
+<option>False</option>
+
+</select>
+
+<br><br>
+
+<button onclick="saveIntelEdit()">
+Save Changes
+</button>
+
+<button onclick="closeIntelModal()">
+Cancel
+</button>
+
+</div>
+
+</div>
+
+
+
+<script type="module" src="js/intel-view.js"></script>
+
+
+
+<footer class="footer">
+
+<button onclick="lockSite()">
+🔒 Lock Website
+</button>
+
+</footer>
+
+
+<script>
+
+function lockSite(){
+window.location="index.html"
+}
+
+</script>
+
+</body>
+</html>
