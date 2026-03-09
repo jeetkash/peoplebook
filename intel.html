@@ -17,49 +17,53 @@ PeopleBook
 </div>
 
 <nav>
-
 <a href="dashboard.html">Dashboard</a>
 <a href="person.html">Add Person</a>
 <a href="intel.html">Intel</a>
-
 </nav>
 
 </header>
 
+
 <div class="container">
 
+<!-- ADD INTEL CARD -->
 <div class="card">
 
 <h2>Add Intel</h2>
 
 <input id="title" placeholder="Title">
+
 <input id="source" placeholder="Source">
 
 <label>Date Heard</label>
 <input id="dateHeard" type="date">
 
-<textarea id="intelText"></textarea>
+<textarea id="intelText" placeholder="Write intel details..."></textarea>
 
 <label>Confidence</label>
-<input id="confidence" type="range" min="0" max="10">
+<input id="confidence" type="range" min="0" max="10" value="5">
 
 <select id="status">
-
-<option>Unverified</option>
-<option>Confirmed</option>
-<option>False</option>
-
+<option value="Unverified">Unverified</option>
+<option value="Confirmed">Confirmed</option>
+<option value="False">False</option>
 </select>
 
-<button onclick="addIntel()">Add Intel</button>
+<button onclick="addIntel()">
+Add Intel
+</button>
 
 </div>
 
+
+
+<!-- INTEL LIST CARD -->
 <div class="card">
 
 <h2>Intel List</h2>
 
-<table>
+<table class="intelTable">
 
 <thead>
 
@@ -67,11 +71,16 @@ PeopleBook
 <th>Title</th>
 <th>Source</th>
 <th>Status</th>
+<th>Actions</th>
 </tr>
 
 </thead>
 
-<tbody id="intelTable"></tbody>
+<tbody id="intelList">
+
+<!-- INTEL LOADS HERE -->
+
+</tbody>
 
 </table>
 
@@ -79,7 +88,12 @@ PeopleBook
 
 </div>
 
+
+
+<!-- FIREBASE SCRIPT -->
 <script type="module" src="js/intel.js"></script>
+
+
 
 <footer class="footer">
 
@@ -89,10 +103,16 @@ PeopleBook
 
 </footer>
 
+
+
 <script>
+
 function lockSite(){
 window.location="index.html"
 }
+
 </script>
+
 </body>
+
 </html>
