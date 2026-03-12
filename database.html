@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>People Database</title>
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<div class="logo" onclick="location.href='dashboard.html'">
+PeopleBook
+</div>
+
+<nav>
+<a href="dashboard.html">Dashboard</a>
+<a href="person.html">Add Person</a>
+<a href="journal.html">Journal</a>
+<a href="timeline.html">Timeline</a>
+<a href="intel.html">Intel</a>
+</nav>
+
+</header>
+
+
+<div class="container">
+
+<div class="card">
+
+<h2>People Database</h2>
+
+<input
+id="searchInput"
+placeholder="Search people..."
+onkeyup="searchPeople()"
+>
+
+<table>
+
+<thead>
+
+<tr>
+
+<th>S.No</th>
+<th>Name</th>
+<th>Trust</th>
+<th>Actions</th>
+
+</tr>
+
+</thead>
+
+<tbody id="peopleTable"></tbody>
+
+</table>
+
+</div>
+
+</div>
+
+<script type="module" src="js/dashboard.js"></script>
+
+</body>
+</html>
