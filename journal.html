@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<title>Journal</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+<header class="topbar">
+
+<div class="logo" onclick="location.href='index.html'">
+PeopleBook
+</div>
+
+<nav>
+<a href="dashboard.html">Dashboard</a>
+<a href="characters.html">Characters</a>
+<a href="journal.html">Journal</a>
+<a href="timeline.html">Timeline</a>
+<a href="intel.html">Intel</a>
+</nav>
+
+</header>
+
+
+<div class="container">
+
+
+<!-- ADD JOURNAL EVENT -->
+
+<div class="card">
+
+<h2>Add Journal Event</h2>
+
+<input id="title" placeholder="Event Title">
+
+<label>Date</label>
+<input id="date" type="date">
+
+<label>Author</label>
+<select id="author">
+<option>Jeet</option>
+<option>Anika</option>
+</select>
+
+
+<label>Characters Involved</label>
+
+<div style="display:flex; gap:10px; margin-top:10px;">
+
+<input id="characterInput" placeholder="Enter character name">
+
+<button type="button" onclick="addCharacter()">+</button>
+
+</div>
+
+<div id="characterList" style="margin-top:10px;"></div>
+
+
+<textarea id="text" placeholder="Describe the event..."></textarea>
+
+<button onclick="addJournal()">
+Add Event
+</button>
+
+</div>
+
+
+
+<!-- JOURNAL ENTRIES -->
+
+<div class="card">
+
+<h2>Journal Entries</h2>
+
+<div id="journalList"></div>
+
+</div>
+
+
+</div>
+
+
+<script type="module" src="js/journal.js"></script>
+
+
+<footer class="footer">
+
+<button onclick="lockSite()">
+🔒 Lock Website
+</button>
+
+</footer>
+
+
+<script>
+
+function lockSite(){
+window.location="index.html"
+}
+
+</script>
+
+</body>
+</html>
