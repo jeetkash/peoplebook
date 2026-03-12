@@ -3,77 +3,277 @@
 
 <head>
 
-<title>Dashboard</title>
+<title>PeopleBook Dashboard</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
 <link rel="stylesheet" href="css/style.css">
 
 </head>
 
 <body>
 
+
 <header class="topbar">
 
-<div class="logo" onclick="location.href='index.html'">
+<div class="logo" onclick="location.href='dashboard.html'">
 PeopleBook
 </div>
 
-<nav>
+<nav class="nav-buttons">
 
 <a href="dashboard.html">Dashboard</a>
-<a href="person.html">Add Person</a>
+<a href="characters.html">Characters</a>
+<a href="journal.html">Journal</a>
+<a href="timeline.html">Timeline</a>
 <a href="intel.html">Intel</a>
+<a href="database.html">Database</a>
 
 </nav>
 
 </header>
 
+
 <div class="container">
 
-<div class="card">
 
-<h2>People Database</h2>
+<!-- HERO SECTION -->
 
-<p>Store profiles and interaction history</p>
+<div class="hero">
 
-<button onclick="location.href='person.html'">
-Add Person
+<h1>Welcome to PeopleBook - Your Personal People Archive 📖</h1>
+
+<p>
+
+PeopleBook is your personal intelligence system for the people in your life.  
+Track interactions, store memories, document observations, and understand the
+relationships around you in a structured way.
+
+Instead of forgetting moments or losing details, PeopleBook helps you build a
+digital archive of the characters, stories, and experiences that shape your
+social world.
+
+Whether you're recording memories, collecting intel, or exploring the timeline
+of events... this is your personal database of people.
+
+</p>
+
+<div class="hero-buttons">
+
+<button onclick="location.href='characters.html'">
+Explore Characters →
+</button>
+
+<br>
+
+<button onclick="location.href='journal.html'">
+Write a Memory →
 </button>
 
 </div>
 
+</div>
+<br>
+<br>
+
+
+
+<!-- DASHBOARD STATS -->
+
+<div class="dashboard-grid">
+
+<div class="dashboard-card" onclick="location.href='characters.html'">
+
+<h2 id="charactersCount">0</h2>
+<p>Characters</p>
+
+</div>
+
+
+<div class="dashboard-card" onclick="location.href='intel.html'">
+
+<h2 id="intelCount">0</h2>
+<p>Intel Files</p>
+
+</div>
+
+
+<div class="dashboard-card" onclick="location.href='journal.html'">
+
+<h2 id="memoriesCount">0</h2>
+<p>Memories</p>
+
+</div>
+
+
+<div class="dashboard-card">
+
+<h3>🔥 Daily Streak</h3>
+
+<p id="jeetStreak">Jeet: 0 days</p>
+<p id="anikaStreak">Anika: 0 days</p>
+
+</div>
+
+</div>
+
+
+
+<!-- SECTION CARDS -->
+
+
+
 <div class="card">
 
-<h2>People List</h2>
+<h2>👥 Characters</h2>
 
-<input
-id="searchInput"
-placeholder="Search people..."
-onkeyup="searchPeople()"
->
+<p>
 
-<table>
+The Characters section is where you build your personal database of people.
+Each character profile stores important information such as how you met them,
+first impressions, personality notes, and trust metrics.
 
-<thead>
+This allows you to organize and understand the individuals who appear in your
+life story.
 
-<tr>
+</p>
 
-<th>S.No</th>
-<th>Name</th>
-<th>Trust</th>
-<th>Actions</th>
-
-</tr>
-
-</thead>
-
-<tbody id="peopleTable"></tbody>
-
-</table>
+<button onclick="location.href='characters.html'">
+Open Characters →
+</button>
 
 </div>
 
+
+
+<div class="card">
+
+<h2>📖 Journal</h2>
+
+<p>
+
+The Journal is where memories are recorded. Every meaningful interaction,
+event, or story can be written here along with the characters involved.
+
+These entries become part of your growing archive and also contribute to your
+daily streak.
+
+Over time, the journal becomes a detailed narrative of experiences.
+
+</p>
+
+<button onclick="location.href='journal.html'">
+Write a Memory →
+</button>
+
 </div>
 
-<script type="module" src="js/dashboard.js"></script>
+
+
+<div class="card">
+
+<h2>🕵️ Intel</h2>
+
+<p>
+
+The Intel section stores observations, rumors, information, or insights you
+collect about people and situations.
+
+Think of it as your private intelligence archive, a place where you store
+things you notice, learn, or hear.
+
+Intel entries often connect back to characters and events.
+
+</p>
+
+<button onclick="location.href='intel.html'">
+View Intel Files →
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>🕰 Timeline</h2>
+
+<p>
+
+The Timeline brings together events from your Journal, Intel files, and Logs
+into one chronological story. It allows you to see how moments unfold over
+time and how different characters intersect within your experiences.
+
+Each event is represented with a colored marker to quickly identify the
+type of information being displayed.
+
+</p>
+
+<ul class="timeline-legend">
+
+<li>
+<span class="blue-dot"></span>
+<b>Blue</b> —   Interaction Logs <br>
+Direct interactions or moments recorded inside a character’s profile.
+</li>
+
+<li>
+<span class="red-dot"></span>
+<b>Red</b> — Intel Files <br>
+Observations, gossip, or information collected about people or situations.
+</li>
+
+<li>
+<span class="yellow-dot"></span>
+<b>Yellow</b> —  Journal Entries <br>
+Memories and events you personally record in the journal.
+</li>
+
+</ul>
+
+<p>
+
+By combining these sources, the timeline transforms your archive into a
+living narrative of events — showing how relationships evolve and how
+moments connect across time.
+
+</p>
+
+<button onclick="location.href='timeline.html'">
+View Timeline →
+</button>
+
+</div>
+
+
+
+<div class="card">
+
+<h2>🗄 Database</h2>
+
+<p>
+
+The Database page provides a complete table view of every character stored in
+PeopleBook.
+
+Here you can search, manage, and navigate through profiles efficiently.
+
+If the Characters page focuses on profiles, the Database page focuses on
+overview and management.
+
+</p>
+
+<button onclick="location.href='database.html'">
+Open Database →
+</button>
+
+</div>
+
+
+
+</div>
+
+
 <footer class="footer">
 
 <button onclick="lockSite()">
@@ -82,11 +282,21 @@ onkeyup="searchPeople()"
 
 </footer>
 
+
+
+<script type="module" src="js/stats.js"></script>
+<script type="module" src="js/streak.js"></script>
+
+
 <script>
+
 function lockSite(){
 window.location="index.html"
 }
+
 </script>
 
+
 </body>
+
 </html>
