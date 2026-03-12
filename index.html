@@ -1,40 +1,65 @@
-<!DOCTYPE html> 
+<!DOCTYPE html>
 <html>
 
 <head>
-<title>Notebook Login</title>
+<title>PeopleBook</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 
 <body>
 
-<div class="container">
+<div class="login-wrapper">
 
-<h1>People Notebook</h1>
+<h1 class="vault-title">PeopleBook</h1>
+<p class="vault-sub">The Chaos Archive</p>
+
+<div class="vault-stats">
+
+<div class="stat">
+<h3 id="peopleCount">0</h3>
+<p>Characters</p>
+</div>
+
+<div class="stat">
+<h3 id="intelCount">0</h3>
+<p>Intel Files</p>
+</div>
+
+<div class="stat">
+<h3 id="logsCount">0</h3>
+<p>Memories</p>
+</div>
+<div class="card">
+
+<h2>🔥 Daily Streak</h2>
+
+<p id="jeetStreak"></p>
+
+<p id="anikaStreak"></p>
+
+</div>
+
+</div>
+
+<div class="login-card">
+
+<h2>Enter the Notebook</h2>
 
 <input id="password" placeholder="Password" type="password">
 
-<button onclick="login()">Enter</button>
+<button onclick="login()">
+Unlock Vault
+</button>
 
 <p id="error"></p>
 
 </div>
 
+</div>
+
 <script src="js/login.js"></script>
-<footer class="footer">
-
-<button onclick="lockSite()">
-🔒 Lock Website
-</button>
-
-</footer>
-
-<script>
-function lockSite(){
-window.location="index.html"
-}
-</script>
+<script type="module" src="js/stats.js"></script>
+<script type="module" src="js/streak.js"></script>
 
 </body>
-
 </html>
