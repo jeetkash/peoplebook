@@ -374,3 +374,4 @@ reader.readAsDataURL(file);
 }
 
 window.previewImage = previewImage;
+
