@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Timeline</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<link rel="stylesheet" href="css/style.css">
+
+</head>
+
+<body>
+
+<header class="topbar">
+
+<div class="logo" onclick="location.href='dashboard.html'">
+PeopleBook
+</div>
+
+<nav>
+
+<a href="dashboard.html">Dashboard</a>
+<a href="person.html">Add Person</a>
+<a href="journal.html">Journal</a>
+<a href="timeline.html">Timeline</a>
+<a href="intel.html">Intel</a>
+
+</nav>
+
+</header>
+
+
+<div class="container">
+
+<div class="card">
+
+<h2>Timeline</h2>
+
+<div id="timelineContainer"></div>
+
+</div>
+
+</div>
+
+
+<footer class="footer">
+
+<button onclick="lockSite()">
+🔒 Lock Website
+</button>
+
+</footer>
+
+
+<script type="module" src="js/timeline.js"></script>
+
+<script>
+
+function lockSite(){
+window.location="index.html"
+}
+
+</script>
+
+</body>
+</html>
