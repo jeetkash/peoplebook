@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Network</title>
+  <style>
+    body {
+      background: #0b0b0f;
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+    }
+
+    canvas {
+      margin-top: 40px;
+      background: #111;
+      border-radius: 15px;
+    }
+  </style>
+</head>
+<link rel="stylesheet" href="css/style.css">
+
+<body>
+    <header class="topbar">
+
+<div class="logo" onclick="location.href='dashboard.html'">
+PeopleBook
+</div>
+
+<nav class="nav-buttons">
+
+<a href="dashboard.html">Dashboard</a>
+<a href="characters.html">Characters</a>
+<a href="journal.html">Journal</a>
+<a href="timeline.html">Timeline</a>
+<a href="intel.html">Intel</a>
+<a href="database.html">Database</a>
+<a href="relationships.html">Relationships</a>
+<a href="network.html">Network</a>
+
+</nav>
+
+</header>
+
+<h1>🕸️ Network Map</h1>
+
+<canvas id="networkCanvas" width="1100" height="650"></canvas>
+
+<script type="module" src="js/network.js"></script>
+
+</body>
+</html>

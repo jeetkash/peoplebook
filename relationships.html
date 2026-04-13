@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Relationships</title>
+  <link rel="stylesheet" href="css/style.css">
+
+  <style>
+    body {
+      background: #0b0b0f;
+      color: #fff;
+      font-family: sans-serif;
+    }
+
+    .container {
+      padding: 40px;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    .form {
+      background: #111;
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 30px;
+      border: 1px solid #222;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      background: #000;
+      color: #fff;
+      border: 1px solid #333;
+      border-radius: 8px;
+    }
+
+    button {
+      background: gold;
+      color: black;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .card {
+      background: #111;
+      padding: 15px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #222;
+    }
+
+    .tags {
+      margin-top: 10px;
+      font-size: 12px;
+      color: gold;
+    }
+  </style>
+</head>
+
+<body>
+    <header class="topbar">
+
+<div class="logo" onclick="location.href='dashboard.html'">
+PeopleBook
+</div>
+
+<nav class="nav-buttons">
+
+<a href="dashboard.html">Dashboard</a>
+<a href="characters.html">Characters</a>
+<a href="journal.html">Journal</a>
+<a href="timeline.html">Timeline</a>
+<a href="intel.html">Intel</a>
+<a href="database.html">Database</a>
+<a href="relationships.html">Relationships</a>
+<a href="network.html">Network</a>
+
+</nav>
+
+</header>
+
+<div class="container">
+
+  <h1>💘 Relationships</h1>
+
+  <!-- FORM -->
+  <div class="form">
+    <input type="text" id="personA" placeholder="Person A (e.g. You)">
+    <input type="text" id="personB" placeholder="Person B">
+
+    <select id="status">
+  <optgroup label="💘 Romantic">
+    <option>Talking Stage</option>
+    <option>Situationship</option>
+    <option>Dating</option>
+    <option>Relationship</option>
+    <option>Breakup</option>
+  </optgroup>
+
+  <optgroup label="🧑‍🤝‍🧑 Social">
+    <option>Acquaintance</option>
+    <option>Friend</option>
+    <option>Close Friend</option>
+    <option>Best Friend</option>
+    <option>Enemy</option>
+  </optgroup>
+
+  <optgroup label="⚡ Other">
+    <option>Casual</option>
+    <option>FWB</option>
+    <option>Complicated</option>
+  </optgroup>
+</select>
+
+    <input type="text" id="tags" placeholder="Tags (comma separated: ghosting,toxic)">
+    
+<button id="addRelBtn">Add Relationship</button>  </div>
+
+  <!-- LIST -->
+  <div id="relationshipList"></div>
+
+</div>
+
+<script type="module" src="js/relationships.js"></script>
+
+</body>
+</html>
